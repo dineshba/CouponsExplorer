@@ -11,22 +11,44 @@ import UIKit
 
 class DetailsViewController: UIViewController{
     var scannedCode: String?
-    
+    var dictonary:NSDictionary?
     override func viewDidLoad() {
         super.viewDidLoad()
         view.backgroundColor = .white
         print(scannedCode!)
-        let urlString = "http://ec2-13-127-161-80.ap-south-1.compute.amazonaws.com:8080/create?er=Dev&aadhar=122"
-        print(urlString)
-        guard let url = URL(string: urlString) else{return}
-        URLSession.shared.dataTask(with: url){(data, response, error) in
-            if error != nil{
-                print(error!.localizedDescription)
+        let url = URL(string: "http://ec2-13-127-161-80.ap-south-1.compute.amazonaws.com:8080/create")!
+        var request = URLRequest(url: url)
+        request.setValue("application/x-www-form-urlencoded", forHTTPHeaderField: "Content-Type")
+        request.httpMethod = "POST"
+        let postString = "sign=MFkwEw&message="+scannedCode!+"&owner=Dev&aadhar=122"
+        request.httpBody = postString.data(using: .utf8)
+        let task = URLSession.shared.dataTask(with: request) { data, response, error in
+            guard let data = data, error == nil else {                                                 // check for fundamental networking error
+                print("error=\(String(describing: error))")
+                return
             }
-            guard let data = data else {return}
-            print(data)
             
-            }.resume()
+            if let httpStatus = response as? HTTPURLResponse, httpStatus.statusCode != 200 {           // check for http errors
+                print("statusCode should be 200, but is \(httpStatus.statusCode)")
+                print("response = \(String(describing: response))")
+            }
+            
+            let responseString = String(data: data, encoding: .utf8)
+            print("responseString = \(String(describing: responseString))")
+           
+        }
+        task.resume()
+//        let urlString = "http://ec2-13-127-161-80.ap-south-1.compute.amazonaws.com:8080/create?sign=MFkwEw&message="+scannedCode!+"&owner=Dev&aadhar=122"
+//        print(urlString)
+//        guard let url = URL(string: urlString) else{return}
+//        URLSession.shared.dataTask(with: url){(data, response, error) in
+//            if error != nil{
+//                print(error!.localizedDescription)
+//            }
+//            guard let data = data else {return}
+//            print(data)
+//
+//            }.resume()
         view.addSubview(codeLabel)
         codeLabel.centerYAnchor.constraint(equalTo: view.centerYAnchor, constant: -100).isActive = true
         codeLabel.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 16).isActive = true
