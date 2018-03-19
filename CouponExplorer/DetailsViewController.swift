@@ -55,7 +55,7 @@ class DetailsViewController: UIViewController{
         codeLabel.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -16).isActive = true
         codeLabel.heightAnchor.constraint(equalToConstant: 50).isActive = true
         if let scannedCode = scannedCode {
-            codeLabel.text = scannedCode
+            codeLabel.text = scannedCode+"successfully added to blockchain"
         }
         
         view.addSubview(scanButton)
