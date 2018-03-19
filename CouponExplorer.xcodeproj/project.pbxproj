@@ -14,6 +14,7 @@
 		1144B991205E36B500B5115F /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1144B98F205E36B500B5115F /* Main.storyboard */; };
 		1144B993205E36B500B5115F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1144B992205E36B500B5115F /* Assets.xcassets */; };
 		1144B996205E36B500B5115F /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1144B994205E36B500B5115F /* LaunchScreen.storyboard */; };
+		17063E5C205F8E75003ECFE3 /* DetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17063E5B205F8E75003ECFE3 /* DetailsViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -26,6 +27,7 @@
 		1144B992205E36B500B5115F /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		1144B995205E36B500B5115F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		1144B997205E36B500B5115F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		17063E5B205F8E75003ECFE3 /* DetailsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailsViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -66,6 +68,7 @@
 				1144B992205E36B500B5115F /* Assets.xcassets */,
 				1144B994205E36B500B5115F /* LaunchScreen.storyboard */,
 				1144B997205E36B500B5115F /* Info.plist */,
+				17063E5B205F8E75003ECFE3 /* DetailsViewController.swift */,
 			);
 			path = CouponExplorer;
 			sourceTree = "<group>";
@@ -146,6 +149,7 @@
 				1144B98E205E36B500B5115F /* ScanViewController.swift in Sources */,
 				1144B98A205E36B500B5115F /* AppDelegate.swift in Sources */,
 				1144B98C205E36B500B5115F /* CoupnsViewController.swift in Sources */,
+				17063E5C205F8E75003ECFE3 /* DetailsViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
