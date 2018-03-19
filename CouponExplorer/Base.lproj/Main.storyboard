@@ -39,11 +39,47 @@
                     <tabBarItem key="tabBarItem" title="Coupons" image="first" id="acW-dT-cKf"/>
                     <connections>
                         <outlet property="tableView" destination="Yiv-PS-AoS" id="M7q-ZY-NpZ"/>
+                        <segue destination="sn2-CU-nkN" kind="show" identifier="couponDetails" id="dw8-t0-20G"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="W5J-7L-Pyd" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1088.8" y="-320.68965517241384"/>
+        </scene>
+        <!--Coupon Details View Controller-->
+        <scene sceneID="jm7-tP-7mT">
+            <objects>
+                <viewController id="sn2-CU-nkN" customClass="CouponDetailsViewController" customModule="CouponExplorer" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="sj4-4d-kSe">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="e52-uO-guF">
+                                <rect key="frame" x="0.0" y="64" width="375" height="603"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <inset key="separatorInset" minX="10" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                <connections>
+                                    <outlet property="dataSource" destination="sn2-CU-nkN" id="BCa-X1-Hhc"/>
+                                    <outlet property="delegate" destination="sn2-CU-nkN" id="Vc7-bM-Myr"/>
+                                </connections>
+                            </tableView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="e52-uO-guF" firstAttribute="top" secondItem="Vk0-lI-eSc" secondAttribute="top" id="Sxt-Tw-Fl4"/>
+                            <constraint firstItem="Vk0-lI-eSc" firstAttribute="bottom" secondItem="e52-uO-guF" secondAttribute="bottom" id="aAS-Ee-6vg"/>
+                            <constraint firstItem="e52-uO-guF" firstAttribute="leading" secondItem="Vk0-lI-eSc" secondAttribute="leading" id="eav-vP-74h"/>
+                            <constraint firstItem="Vk0-lI-eSc" firstAttribute="trailing" secondItem="e52-uO-guF" secondAttribute="trailing" id="fnV-Vg-9lV"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="Vk0-lI-eSc"/>
+                    </view>
+                    <connections>
+                        <outlet property="tableView" destination="e52-uO-guF" id="l1w-1J-Rrj"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="23W-qX-xrc" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1860" y="-321"/>
         </scene>
         <!--Authorities-->
         <scene sceneID="wg7-f3-ORb">
