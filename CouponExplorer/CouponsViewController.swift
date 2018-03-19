@@ -23,22 +23,31 @@ class CouponsViewController: UIViewController, UITableViewDelegate, UITableViewD
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = self.tableView.dequeueReusableCell(withIdentifier: "couponsCell", for: indexPath) as! CouponTableViewCell
-        cell.messageLabel.text = self.coupons[indexPath.row].message
+        let coupon = self.coupons[indexPath.row]
+        cell.configure(coupon)
         return cell
     }
-    
-    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        return 50
-    }
-    
+
     var coupons: [Coupon] = []
 
     override func viewDidLoad() {
         let nib = UINib(nibName: "CouponTableViewCell", bundle: nil)
         self.tableView.register(nib, forCellReuseIdentifier: "couponsCell")
         self.tableView.tableFooterView = UIView()
-        
+        self.tableView.rowHeight = UITableViewAutomaticDimension;
+        self.tableView.estimatedRowHeight = 100.0;
+        self.navigationItem.hidesBackButton = true
+        self.navigationItem.title = "Coupons"
         super.viewDidLoad()
+        fetchCoupons()
+    }
+
+    override func didReceiveMemoryWarning() {
+        super.didReceiveMemoryWarning()
+    }
+    
+    
+    private func fetchCoupons() {
         let urlString = "http://ec2-13-127-161-80.ap-south-1.compute.amazonaws.com:8080/coupons-explorer"
         guard let url = URL(string: urlString) else{return}
         URLSession.shared.dataTask(with: url){(data, response, error) in
@@ -48,7 +57,7 @@ class CouponsViewController: UIViewController, UITableViewDelegate, UITableViewD
             guard let data = data else {return}
             do {
                 guard let couponsJson = try JSONSerialization.jsonObject(with: data, options: [])
-                as? [String: [String: Any]] else {
+                    as? [String: [String: Any]] else {
                         print("error trying to convert data to JSON")
                         return
                 }
@@ -64,11 +73,6 @@ class CouponsViewController: UIViewController, UITableViewDelegate, UITableViewD
             }
             }.resume()
     }
-
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-    }
-    
 
 }
 

@@ -12,31 +12,45 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
-        <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="couponsCell" id="KGk-i7-Jjw" customClass="CouponTableViewCell" customModule="CouponExplorer" customModuleProvider="target">
-            <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+        <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="couponsCell" rowHeight="71" id="KGk-i7-Jjw" customClass="CouponTableViewCell" customModule="CouponExplorer" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="320" height="71"/>
             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
             <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
-                <rect key="frame" x="0.0" y="0.0" width="320" height="43.5"/>
+                <rect key="frame" x="0.0" y="0.0" width="320" height="70.5"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
-                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Message" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="h4q-cJ-VeQ">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="43"/>
-                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                        <nil key="textColor"/>
-                        <nil key="highlightedColor"/>
-                    </label>
+                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="3" translatesAutoresizingMaskIntoConstraints="NO" id="3QS-Rr-Ep3">
+                        <rect key="frame" x="10" y="5" width="310" height="60.5"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalCompressionResistancePriority="749" text="Signature" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="PxH-ms-Dtf">
+                                <rect key="frame" x="0.0" y="0.0" width="310" height="37"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Message" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="h4q-cJ-VeQ">
+                                <rect key="frame" x="0.0" y="40" width="310" height="20.5"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                    </stackView>
                 </subviews>
                 <constraints>
-                    <constraint firstAttribute="trailing" secondItem="h4q-cJ-VeQ" secondAttribute="trailing" id="4lQ-Ze-6Ra"/>
-                    <constraint firstAttribute="bottom" secondItem="h4q-cJ-VeQ" secondAttribute="bottom" id="osf-Ik-Gcg"/>
-                    <constraint firstItem="h4q-cJ-VeQ" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" id="tCv-9o-ClQ"/>
-                    <constraint firstItem="h4q-cJ-VeQ" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" id="zw7-VN-mL7"/>
+                    <constraint firstItem="3QS-Rr-Ep3" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="5" id="GyV-6r-fYM"/>
+                    <constraint firstAttribute="bottom" secondItem="3QS-Rr-Ep3" secondAttribute="bottom" constant="5" id="Lfj-ml-eVs"/>
+                    <constraint firstItem="3QS-Rr-Ep3" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="10" id="ZY2-uO-KmK"/>
+                    <constraint firstAttribute="trailing" secondItem="3QS-Rr-Ep3" secondAttribute="trailing" id="vqd-7E-uDh"/>
                 </constraints>
             </tableViewCellContentView>
             <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
+            <inset key="separatorInset" minX="10" minY="0.0" maxX="0.0" maxY="0.0"/>
             <connections>
                 <outlet property="messageLabel" destination="h4q-cJ-VeQ" id="ngs-rL-jUx"/>
+                <outlet property="signatureLabel" destination="PxH-ms-Dtf" id="wZp-W4-TAV"/>
             </connections>
+            <point key="canvasLocation" x="34" y="79.5"/>
         </tableViewCell>
     </objects>
 </document>
