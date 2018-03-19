@@ -20,6 +20,7 @@
 		11BB1597205FBE54008D9475 /* CouponDetailsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11BB1595205FBE54008D9475 /* CouponDetailsTableViewCell.swift */; };
 		11BB1598205FBE54008D9475 /* CouponDetailsTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 11BB1596205FBE54008D9475 /* CouponDetailsTableViewCell.xib */; };
 		17063E5C205F8E75003ECFE3 /* DetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17063E5B205F8E75003ECFE3 /* DetailsViewController.swift */; };
+		F082C1B9F40FD9CF6C9EB068 /* Pods_CouponExplorer.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F53137402A7CE8B91AD85B6B /* Pods_CouponExplorer.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -38,6 +39,9 @@
 		11BB1595205FBE54008D9475 /* CouponDetailsTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CouponDetailsTableViewCell.swift; sourceTree = "<group>"; };
 		11BB1596205FBE54008D9475 /* CouponDetailsTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CouponDetailsTableViewCell.xib; sourceTree = "<group>"; };
 		17063E5B205F8E75003ECFE3 /* DetailsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailsViewController.swift; sourceTree = "<group>"; };
+		1B7D6861D44132E5A6F87B12 /* Pods-CouponExplorer.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CouponExplorer.release.xcconfig"; path = "Pods/Target Support Files/Pods-CouponExplorer/Pods-CouponExplorer.release.xcconfig"; sourceTree = "<group>"; };
+		AA44A54AE1B4DA5ADF66C781 /* Pods-CouponExplorer.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CouponExplorer.debug.xcconfig"; path = "Pods/Target Support Files/Pods-CouponExplorer/Pods-CouponExplorer.debug.xcconfig"; sourceTree = "<group>"; };
+		F53137402A7CE8B91AD85B6B /* Pods_CouponExplorer.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_CouponExplorer.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -45,6 +49,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F082C1B9F40FD9CF6C9EB068 /* Pods_CouponExplorer.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -56,6 +61,8 @@
 			children = (
 				1144B988205E36B500B5115F /* CouponExplorer */,
 				1144B987205E36B500B5115F /* Products */,
+				B4EEB7EB2657B767E8C3C612 /* Pods */,
+				F11BC108AE819AD6C80D1606 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -88,6 +95,23 @@
 			path = CouponExplorer;
 			sourceTree = "<group>";
 		};
+		B4EEB7EB2657B767E8C3C612 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				AA44A54AE1B4DA5ADF66C781 /* Pods-CouponExplorer.debug.xcconfig */,
+				1B7D6861D44132E5A6F87B12 /* Pods-CouponExplorer.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+		F11BC108AE819AD6C80D1606 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				F53137402A7CE8B91AD85B6B /* Pods_CouponExplorer.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -95,9 +119,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 1144B99A205E36B600B5115F /* Build configuration list for PBXNativeTarget "CouponExplorer" */;
 			buildPhases = (
+				ABCCB5A5E81FCE777021341D /* [CP] Check Pods Manifest.lock */,
 				1144B982205E36B500B5115F /* Sources */,
 				1144B983205E36B500B5115F /* Frameworks */,
 				1144B984205E36B500B5115F /* Resources */,
+				719D761508591174DD33871E /* [CP] Embed Pods Frameworks */,
+				ED3DB1705A5B0D49D04872BB /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -156,6 +183,62 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		719D761508591174DD33871E /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${SRCROOT}/Pods/Target Support Files/Pods-CouponExplorer/Pods-CouponExplorer-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework",
+				"${BUILT_PRODUCTS_DIR}/Toast-Swift/Toast_Swift.framework",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Alamofire.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Toast_Swift.framework",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-CouponExplorer/Pods-CouponExplorer-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		ABCCB5A5E81FCE777021341D /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-CouponExplorer-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		ED3DB1705A5B0D49D04872BB /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-CouponExplorer/Pods-CouponExplorer-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		1144B982205E36B500B5115F /* Sources */ = {
@@ -304,9 +387,11 @@
 		};
 		1144B99B205E36B600B5115F /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = AA44A54AE1B4DA5ADF66C781 /* Pods-CouponExplorer.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 88KM566U25;
 				INFOPLIST_FILE = CouponExplorer/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.thoughtworks.CouponExplorer;
@@ -318,9 +403,11 @@
 		};
 		1144B99C205E36B600B5115F /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 1B7D6861D44132E5A6F87B12 /* Pods-CouponExplorer.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 88KM566U25;
 				INFOPLIST_FILE = CouponExplorer/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.thoughtworks.CouponExplorer;

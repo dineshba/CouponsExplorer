@@ -15,7 +15,7 @@ class CouponTableViewCell: UITableViewCell {
     
     func configure(_ coupon: Coupon) {
         self.messageLabel.text = coupon.message
-        self.signatureLabel.text = coupon.key
+        self.signatureLabel.text = String(coupon.key.reversed())
     }
     
 }

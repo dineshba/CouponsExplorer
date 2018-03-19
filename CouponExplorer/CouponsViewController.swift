@@ -7,7 +7,7 @@ struct Coupon {
     public let aadhar: String
     
     init(key: String, value: [String:Any]) {
-        self.key = String(key.reversed())
+        self.key = key
         self.message = value["message"] as! String
         self.owner = value["owner"] as! String
         self.aadhar = value["aadhar"] as! String
@@ -29,12 +29,16 @@ class CouponsViewController: UIViewController, UITableViewDelegate, UITableViewD
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        self.performSegue(withIdentifier: "couponDetails", sender: self.coupons[indexPath.row])
+        self.performSegue(withIdentifier: "couponDetails", sender: indexPath.row)
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        if let couponDetailsViewController = segue.destination as? CouponDetailsViewController, let coupon = sender as? Coupon {
+        if let couponDetailsViewController = segue.destination as? CouponDetailsViewController, let index = sender as? Int {
+            let coupon = self.coupons[index]
             couponDetailsViewController.coupon = coupon
+            if index > 0 {
+                couponDetailsViewController.previousCouponSignature = self.coupons[index - 1].key
+            }
         }
     }
 
