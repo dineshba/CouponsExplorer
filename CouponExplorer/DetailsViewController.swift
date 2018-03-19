@@ -16,7 +16,7 @@ class DetailsViewController: UIViewController{
         super.viewDidLoad()
         view.backgroundColor = .white
         print(scannedCode!)
-        let urlString = "url"
+        let urlString = "http://ec2-13-127-161-80.ap-south-1.compute.amazonaws.com:8080/create?er=Dev&aadhar=122"
         print(urlString)
         guard let url = URL(string: urlString) else{return}
         URLSession.shared.dataTask(with: url){(data, response, error) in

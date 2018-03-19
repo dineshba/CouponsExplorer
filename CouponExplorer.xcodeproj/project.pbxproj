@@ -9,11 +9,13 @@
 /* Begin PBXBuildFile section */
 		11306452205E6BCF009465BC /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11306451205E6BCF009465BC /* LoginViewController.swift */; };
 		1144B98A205E36B500B5115F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1144B989205E36B500B5115F /* AppDelegate.swift */; };
-		1144B98C205E36B500B5115F /* CoupnsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1144B98B205E36B500B5115F /* CoupnsViewController.swift */; };
+		1144B98C205E36B500B5115F /* CouponsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1144B98B205E36B500B5115F /* CouponsViewController.swift */; };
 		1144B98E205E36B500B5115F /* ScanViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1144B98D205E36B500B5115F /* ScanViewController.swift */; };
 		1144B991205E36B500B5115F /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1144B98F205E36B500B5115F /* Main.storyboard */; };
 		1144B993205E36B500B5115F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1144B992205E36B500B5115F /* Assets.xcassets */; };
 		1144B996205E36B500B5115F /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1144B994205E36B500B5115F /* LaunchScreen.storyboard */; };
+		11BB1591205F9897008D9475 /* CouponTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11BB158F205F9897008D9475 /* CouponTableViewCell.swift */; };
+		11BB1592205F9897008D9475 /* CouponTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 11BB1590205F9897008D9475 /* CouponTableViewCell.xib */; };
 		17063E5C205F8E75003ECFE3 /* DetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17063E5B205F8E75003ECFE3 /* DetailsViewController.swift */; };
 /* End PBXBuildFile section */
 
@@ -21,12 +23,14 @@
 		11306451205E6BCF009465BC /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		1144B986205E36B500B5115F /* CouponExplorer.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CouponExplorer.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		1144B989205E36B500B5115F /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		1144B98B205E36B500B5115F /* CoupnsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoupnsViewController.swift; sourceTree = "<group>"; };
+		1144B98B205E36B500B5115F /* CouponsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CouponsViewController.swift; sourceTree = "<group>"; };
 		1144B98D205E36B500B5115F /* ScanViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScanViewController.swift; sourceTree = "<group>"; };
 		1144B990205E36B500B5115F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		1144B992205E36B500B5115F /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		1144B995205E36B500B5115F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		1144B997205E36B500B5115F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		11BB158F205F9897008D9475 /* CouponTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CouponTableViewCell.swift; sourceTree = "<group>"; };
+		11BB1590205F9897008D9475 /* CouponTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CouponTableViewCell.xib; sourceTree = "<group>"; };
 		17063E5B205F8E75003ECFE3 /* DetailsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailsViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -62,13 +66,15 @@
 			children = (
 				1144B989205E36B500B5115F /* AppDelegate.swift */,
 				11306451205E6BCF009465BC /* LoginViewController.swift */,
-				1144B98B205E36B500B5115F /* CoupnsViewController.swift */,
+				1144B98B205E36B500B5115F /* CouponsViewController.swift */,
 				1144B98D205E36B500B5115F /* ScanViewController.swift */,
 				1144B98F205E36B500B5115F /* Main.storyboard */,
 				1144B992205E36B500B5115F /* Assets.xcassets */,
 				1144B994205E36B500B5115F /* LaunchScreen.storyboard */,
 				1144B997205E36B500B5115F /* Info.plist */,
 				17063E5B205F8E75003ECFE3 /* DetailsViewController.swift */,
+				11BB158F205F9897008D9475 /* CouponTableViewCell.swift */,
+				11BB1590205F9897008D9475 /* CouponTableViewCell.xib */,
 			);
 			path = CouponExplorer;
 			sourceTree = "<group>";
@@ -135,6 +141,7 @@
 				1144B996205E36B500B5115F /* LaunchScreen.storyboard in Resources */,
 				1144B993205E36B500B5115F /* Assets.xcassets in Resources */,
 				1144B991205E36B500B5115F /* Main.storyboard in Resources */,
+				11BB1592205F9897008D9475 /* CouponTableViewCell.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -148,7 +155,8 @@
 				11306452205E6BCF009465BC /* LoginViewController.swift in Sources */,
 				1144B98E205E36B500B5115F /* ScanViewController.swift in Sources */,
 				1144B98A205E36B500B5115F /* AppDelegate.swift in Sources */,
-				1144B98C205E36B500B5115F /* CoupnsViewController.swift in Sources */,
+				11BB1591205F9897008D9475 /* CouponTableViewCell.swift in Sources */,
+				1144B98C205E36B500B5115F /* CouponsViewController.swift in Sources */,
 				17063E5C205F8E75003ECFE3 /* DetailsViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
