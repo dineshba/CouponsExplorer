@@ -63,18 +63,34 @@
                                     <outlet property="delegate" destination="sn2-CU-nkN" id="Vc7-bM-Myr"/>
                                 </connections>
                             </tableView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Y6L-44-y9q">
+                                <rect key="frame" x="0.0" y="623" width="375" height="44"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="44" id="MrB-Tg-7Z0"/>
+                                </constraints>
+                                <state key="normal" title="Verify">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
+                                <connections>
+                                    <action selector="verifyTapped:" destination="sn2-CU-nkN" eventType="touchUpInside" id="WD5-ey-ZzV"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
+                            <constraint firstItem="Y6L-44-y9q" firstAttribute="top" secondItem="e52-uO-guF" secondAttribute="bottom" constant="-44" id="6Eu-6G-zTB"/>
+                            <constraint firstItem="Y6L-44-y9q" firstAttribute="leading" secondItem="Vk0-lI-eSc" secondAttribute="leading" id="8F5-q0-TZU"/>
                             <constraint firstItem="e52-uO-guF" firstAttribute="top" secondItem="Vk0-lI-eSc" secondAttribute="top" id="Sxt-Tw-Fl4"/>
                             <constraint firstItem="Vk0-lI-eSc" firstAttribute="bottom" secondItem="e52-uO-guF" secondAttribute="bottom" id="aAS-Ee-6vg"/>
                             <constraint firstItem="e52-uO-guF" firstAttribute="leading" secondItem="Vk0-lI-eSc" secondAttribute="leading" id="eav-vP-74h"/>
                             <constraint firstItem="Vk0-lI-eSc" firstAttribute="trailing" secondItem="e52-uO-guF" secondAttribute="trailing" id="fnV-Vg-9lV"/>
+                            <constraint firstItem="Y6L-44-y9q" firstAttribute="trailing" secondItem="Vk0-lI-eSc" secondAttribute="trailing" id="zUG-pb-eBi"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="Vk0-lI-eSc"/>
                     </view>
                     <connections>
                         <outlet property="tableView" destination="e52-uO-guF" id="l1w-1J-Rrj"/>
+                        <outlet property="verifyButton" destination="Y6L-44-y9q" id="t0O-4n-tuP"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="23W-qX-xrc" userLabel="First Responder" sceneMemberID="firstResponder"/>
