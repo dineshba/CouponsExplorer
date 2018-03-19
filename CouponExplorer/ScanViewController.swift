@@ -1,5 +1,5 @@
 //
-//  SecondViewController.swift
+//  ScanViewController.swift
 //  CouponExplorer
 //
 //  Created by Dinesh Balasubramanian on 18/03/18.
@@ -8,7 +8,7 @@
 
 import UIKit
 
-class SecondViewController: UIViewController {
+class ScanViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()

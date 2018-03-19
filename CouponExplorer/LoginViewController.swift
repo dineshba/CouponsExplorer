@@ -15,12 +15,20 @@ class LoginViewController: UIViewController {
     @IBAction func loginTapped(_ sender: Any) {
         if let userName = userNameTextField.text, let password = passwordTextField.text {
             if userName == password {
-                launchHomePage()
+                if userName == "Retailer" {
+                    launchScanPage()
+                } else if userName == "Admin" {
+                    launchCouponsPage()
+                }
             }
         }
     }
     
-    func launchHomePage() {
-        self.performSegue(withIdentifier: "homePage", sender: nil)
+    func launchScanPage() {
+        self.performSegue(withIdentifier: "scan", sender: nil)
+    }
+    
+    func launchCouponsPage() {
+        self.performSegue(withIdentifier: "coupons", sender: nil)
     }
 }
