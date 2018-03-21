@@ -20,6 +20,7 @@
 		11BB1597205FBE54008D9475 /* CouponDetailsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11BB1595205FBE54008D9475 /* CouponDetailsTableViewCell.swift */; };
 		11BB1598205FBE54008D9475 /* CouponDetailsTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 11BB1596205FBE54008D9475 /* CouponDetailsTableViewCell.xib */; };
 		17063E5C205F8E75003ECFE3 /* DetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17063E5B205F8E75003ECFE3 /* DetailsViewController.swift */; };
+		17063E672062994F003ECFE3 /* CreateCouponViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17063E662062994F003ECFE3 /* CreateCouponViewController.swift */; };
 		F082C1B9F40FD9CF6C9EB068 /* Pods_CouponExplorer.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F53137402A7CE8B91AD85B6B /* Pods_CouponExplorer.framework */; };
 /* End PBXBuildFile section */
 
@@ -39,6 +40,7 @@
 		11BB1595205FBE54008D9475 /* CouponDetailsTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CouponDetailsTableViewCell.swift; sourceTree = "<group>"; };
 		11BB1596205FBE54008D9475 /* CouponDetailsTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CouponDetailsTableViewCell.xib; sourceTree = "<group>"; };
 		17063E5B205F8E75003ECFE3 /* DetailsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailsViewController.swift; sourceTree = "<group>"; };
+		17063E662062994F003ECFE3 /* CreateCouponViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateCouponViewController.swift; sourceTree = "<group>"; };
 		1B7D6861D44132E5A6F87B12 /* Pods-CouponExplorer.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CouponExplorer.release.xcconfig"; path = "Pods/Target Support Files/Pods-CouponExplorer/Pods-CouponExplorer.release.xcconfig"; sourceTree = "<group>"; };
 		AA44A54AE1B4DA5ADF66C781 /* Pods-CouponExplorer.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CouponExplorer.debug.xcconfig"; path = "Pods/Target Support Files/Pods-CouponExplorer/Pods-CouponExplorer.debug.xcconfig"; sourceTree = "<group>"; };
 		F53137402A7CE8B91AD85B6B /* Pods_CouponExplorer.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_CouponExplorer.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -91,6 +93,7 @@
 				11BB1593205FAAB9008D9475 /* CouponDetailsViewController.swift */,
 				11BB1595205FBE54008D9475 /* CouponDetailsTableViewCell.swift */,
 				11BB1596205FBE54008D9475 /* CouponDetailsTableViewCell.xib */,
+				17063E662062994F003ECFE3 /* CreateCouponViewController.swift */,
 			);
 			path = CouponExplorer;
 			sourceTree = "<group>";
@@ -245,6 +248,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				17063E672062994F003ECFE3 /* CreateCouponViewController.swift in Sources */,
 				11BB1597205FBE54008D9475 /* CouponDetailsTableViewCell.swift in Sources */,
 				11306452205E6BCF009465BC /* LoginViewController.swift in Sources */,
 				1144B98E205E36B500B5115F /* ScanViewController.swift in Sources */,

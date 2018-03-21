@@ -104,7 +104,7 @@ class DetailsViewController: UIViewController{
     
     lazy var scanButton:UIButton = {
         let scanButton = UIButton(type: .system)
-        scanButton.setTitle("Scan", for: .normal)
+        scanButton.setTitle("Redeem Coupon", for: .normal)
         scanButton.setTitleColor(.white, for: .normal)
         scanButton.titleLabel?.font = UIFont.boldSystemFont(ofSize: 16)
         scanButton.backgroundColor = .orange

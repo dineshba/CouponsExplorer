@@ -15,7 +15,7 @@ class LoginViewController: UIViewController {
     @IBAction func loginTapped(_ sender: Any) {
         if let userName = userNameTextField.text, let password = passwordTextField.text {
             if userName == password {
-                if userName == "PnG" {
+                if userName == "Kroger" {
                     launchScanPage()
                 } else if userName == "NAM" {
                     launchCouponsPage()
@@ -27,7 +27,9 @@ class LoginViewController: UIViewController {
     func launchScanPage() {
         self.performSegue(withIdentifier: "scan", sender: nil)
     }
-    
+    func launchCreatePage() {
+        
+    }
     func launchCouponsPage() {
         self.performSegue(withIdentifier: "coupons", sender: nil)
     }
