@@ -15,9 +15,9 @@ class LoginViewController: UIViewController {
     @IBAction func loginTapped(_ sender: Any) {
         if let userName = userNameTextField.text, let password = passwordTextField.text {
             if userName == password {
-                if userName == "Retailer" {
+                if userName == "PnG" {
                     launchScanPage()
-                } else if userName == "Admin" {
+                } else if userName == "NAM" {
                     launchCouponsPage()
                 }
             }

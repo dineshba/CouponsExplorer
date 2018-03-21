@@ -12,32 +12,44 @@ import UIKit
 class DetailsViewController: UIViewController{
     var scannedCode: String?
     var dictonary:NSDictionary?
+    let doubleSpendMessage="Double spend attempt detected";
+    let invalidMessage = "Cannot redeem token which does not exists"
     override func viewDidLoad() {
         super.viewDidLoad()
         view.backgroundColor = .white
         print(scannedCode!)
-        let url = URL(string: "http://ec2-13-127-161-80.ap-south-1.compute.amazonaws.com:8080/create")!
+        let url = URL(string: "http://ec2-13-127-161-80.ap-south-1.compute.amazonaws.com:8080/redeemApi")!
         var request = URLRequest(url: url)
         request.setValue("application/x-www-form-urlencoded", forHTTPHeaderField: "Content-Type")
         request.httpMethod = "POST"
-        let postString = "sign=MFkwEw&message="+scannedCode!+"&owner=Dev&aadhar=122"
+        let postString = "sign=MFkwEw&txnid="+scannedCode!+"&location=MegaStore001"
         request.httpBody = postString.data(using: .utf8)
-        let task = URLSession.shared.dataTask(with: request) { data, response, error in
+      
+        URLSession.shared.dataTask(with: request) { data, response, error in
             guard let data = data, error == nil else {                                                 // check for fundamental networking error
                 print("error=\(String(describing: error))")
                 return
             }
-            
-            if let httpStatus = response as? HTTPURLResponse, httpStatus.statusCode != 200 {           // check for http errors
+            var success: Int = 0
+            if let httpStatus = response as? HTTPURLResponse, httpStatus.statusCode == 500 {    
+                // check for http errors
                 print("statusCode should be 200, but is \(httpStatus.statusCode)")
+                
                 print("response = \(String(describing: response))")
+                let res = String(data: data, encoding: .utf8)
+                if res?.range(of:self.doubleSpendMessage) != nil {
+                    success = 1
+                }
+                if res?.range(of: self.invalidMessage) != nil{
+                    success = 2
+                }
             }
-            
-            let responseString = String(data: data, encoding: .utf8)
-            print("responseString = \(String(describing: responseString))")
-           
-        }
-        task.resume()
+//            let responseString = String(data: data, encoding: .utf8)
+//            print("responseString = \(String(describing: responseString))")
+            DispatchQueue.main.async {
+                self.addSubViews(success)
+            }
+        }.resume()
 //        let urlString = "http://ec2-13-127-161-80.ap-south-1.compute.amazonaws.com:8080/create?sign=MFkwEw&message="+scannedCode!+"&owner=Dev&aadhar=122"
 //        print(urlString)
 //        guard let url = URL(string: urlString) else{return}
@@ -49,15 +61,32 @@ class DetailsViewController: UIViewController{
 //            print(data)
 //
 //            }.resume()
+        
+    }
+    
+    func addSubViews(_ success: Int) {
         view.addSubview(codeLabel)
         codeLabel.centerYAnchor.constraint(equalTo: view.centerYAnchor, constant: -100).isActive = true
         codeLabel.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 16).isActive = true
         codeLabel.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -16).isActive = true
         codeLabel.heightAnchor.constraint(equalToConstant: 50).isActive = true
-        if let scannedCode = scannedCode {
-            codeLabel.text = scannedCode+"successfully added to blockchain"
+        //        if let scannedCode = scannedCode {
+        //            codeLabel.text = scannedCode
+        //        }
+        //        else{
+        //            codeLabel.text = "Cannot double spend"
+        //        }
+        if success == 0
+        {
+            codeLabel.text = scannedCode! + "redeemed at POS terminal at P&G"
         }
-        
+        else if success == 1
+        {
+            codeLabel.text = self.doubleSpendMessage
+        }
+        else if success == 2{
+            codeLabel.text = self.invalidMessage
+        }
         view.addSubview(scanButton)
         scanButton.widthAnchor.constraint(equalTo: view.widthAnchor, multiplier: 0.5).isActive = true
         scanButton.centerXAnchor.constraint(equalTo: view.centerXAnchor).isActive = true

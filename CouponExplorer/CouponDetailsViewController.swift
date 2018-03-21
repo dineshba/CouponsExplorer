@@ -26,10 +26,10 @@ class CouponDetailsViewController: UIViewController, UITableViewDelegate, UITabl
     }
     
     func networkCall(_ completion: @escaping () -> Void) {
-        let urlString = "http://ec2-13-127-161-80.ap-south-1.compute.amazonaws.com:8080/verify"
+        let urlString = "http://ec2-13-127-161-80.ap-south-1.compute.amazonaws.com:8080/verify-api"
         Alamofire.request(urlString, method: .post, parameters:
             ["sign": self.coupon.key,
-             "data": self.coupon.message + self.coupon.owner + self.coupon.aadhar + self.previousCouponSignature,
+             "data": String(self.coupon.nonce + self.coupon.publicKey + self.coupon.prevHash + self.coupon.data[0].sign),
              "pubKey": self.publicKey
             ]).response {
             response in
@@ -58,28 +58,34 @@ class CouponDetailsViewController: UIViewController, UITableViewDelegate, UITabl
             let (title, message) = self.getTitleAndMessage(at: indexPath.row)
             cell.configure(title: title, message: message)
         } else if indexPath.section == 1 {
-            cell.configure(title: "Message", message: self.coupon.message)
-        } else if indexPath.section == 2 {
-            cell.configure(title: "Key", message: publicKey)
-        }
+            let (title, message) = self.getTranDetails(at: indexPath.row)
+            cell.configure(title: title, message: message)
+        } 
         return cell
     }
 
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return section == 0 ? 3 : 1
+        if section == 0{
+            return 4
+        }
+        if section == 1{
+            return 2
+        }
+        return 1
     }
     
     func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
+        if section == 0{
+            return "Block Data"
+        }
         if section == 1 {
-            return "Messages"
-        } else if section == 2 {
-            return "Your Public Key"
+            return "Transactions"
         }
         return nil
     }
     
     func numberOfSections(in tableView: UITableView) -> Int {
-        return 3
+        return 2
     }
     
     func getTitleAndMessage(at index: Int) -> (String, String) {
@@ -87,13 +93,26 @@ class CouponDetailsViewController: UIViewController, UITableViewDelegate, UITabl
         case 0:
             return ("Signature", String(self.coupon.key.reversed()))
         case 1:
-            return ("Owner", self.coupon.owner)
+            return ("Nonce", self.coupon.nonce)
         case 2:
-            return ("Aadhar", self.coupon.aadhar)
+            return ("Public Key", self.coupon.publicKey)
+        case 3:
+            return ("Previous Hash", self.coupon.prevHash)
         default:
             return ("key", "value")
         }
         
+        
+    }
+    func getTranDetails(at index: Int) -> (String, String){
+        switch index{
+        case 0:
+            return ("Signature", self.coupon.data[0].sign)
+        case 1:
+            return ("Public Key", self.coupon.data[0].publicKey)
+        default:
+            return ("key", "value")
+        }
     }
 
 }
