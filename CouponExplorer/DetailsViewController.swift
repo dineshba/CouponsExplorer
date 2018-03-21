@@ -13,7 +13,7 @@ class DetailsViewController: UIViewController{
     var scannedCode: String?
     var dictonary:NSDictionary?
     let doubleSpendMessage="Double spend attempt detected";
-    let invalidMessage = "Cannot redeem token which does not exists"
+    let invalidMessage = "Cannot redeem token which does not exist"
     override func viewDidLoad() {
         super.viewDidLoad()
         view.backgroundColor = .white
