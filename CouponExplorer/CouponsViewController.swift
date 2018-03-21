@@ -82,6 +82,7 @@ class CouponsViewController: UIViewController, UITableViewDelegate, UITableViewD
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        self.tableView.deselectRow(at: indexPath, animated: false)
         self.performSegue(withIdentifier: "couponDetails", sender: indexPath.row)
     }
     
@@ -104,7 +105,7 @@ class CouponsViewController: UIViewController, UITableViewDelegate, UITableViewD
         self.tableView.rowHeight = UITableViewAutomaticDimension;
         self.tableView.estimatedRowHeight = 100.0;
         self.navigationItem.hidesBackButton = true
-        self.navigationItem.title = "Coupons"
+        self.navigationItem.title = "Coupon Explorer"
         super.viewDidLoad()
         fetchCoupons()
     }
