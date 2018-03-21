@@ -18,6 +18,8 @@ class LoginViewController: UIViewController {
                 if userName == "Kroger" {
                     launchScanPage()
                 } else if userName == "NAM" {
+                    launchCreatePage()
+                } else if userName == "PnG" {
                     launchCouponsPage()
                 }
             }
@@ -28,7 +30,7 @@ class LoginViewController: UIViewController {
         self.performSegue(withIdentifier: "scan", sender: nil)
     }
     func launchCreatePage() {
-        
+        self.performSegue(withIdentifier: "create", sender: nil)
     }
     func launchCouponsPage() {
         self.performSegue(withIdentifier: "coupons", sender: nil)

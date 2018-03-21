@@ -162,6 +162,9 @@
                                 <state key="normal" title="Create">
                                     <color key="titleShadowColor" red="0.99574372700000002" green="1" blue="0.80053874629999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 </state>
+                                <connections>
+                                    <action selector="loginTapped:" destination="9vy-I4-uuT" eventType="touchUpInside" id="8r8-ya-YXD"/>
+                                </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -169,6 +172,7 @@
                     </view>
                     <connections>
                         <outlet property="couponId" destination="Mm2-qi-7OK" id="tBx-cS-b5W"/>
+                        <outlet property="textEntry" destination="XPP-VC-SgN" id="n2p-yz-TlS"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="9ts-vq-Faa" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -254,6 +258,7 @@
                         <outlet property="userNameTextField" destination="CK9-EP-t6o" id="TJ7-RT-lFO"/>
                         <segue destination="9pv-A4-QxB" kind="show" identifier="coupons" id="yyJ-tj-NnA"/>
                         <segue destination="8rJ-Kc-sve" kind="show" identifier="scan" id="NbP-bY-mOF"/>
+                        <segue destination="9vy-I4-uuT" kind="show" identifier="create" id="mIv-KA-R10"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="K0z-ap-CUL" userLabel="First Responder" sceneMemberID="firstResponder"/>
