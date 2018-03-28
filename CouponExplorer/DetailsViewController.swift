@@ -12,7 +12,7 @@ import UIKit
 class DetailsViewController: UIViewController{
     var scannedCode: String?
     var dictonary:NSDictionary?
-    let doubleSpendMessage="Double spend attempt detected";
+    let doubleSpendMessage="Double spend attempt detected and stopped";
     let invalidMessage = "Cannot redeem token which does not exist"
     override func viewDidLoad() {
         super.viewDidLoad()
