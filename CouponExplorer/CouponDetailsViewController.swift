@@ -6,7 +6,6 @@ class CouponDetailsViewController: UIViewController, UITableViewDelegate, UITabl
     
     var coupon: Coupon!
     var previousCouponSignature: String = ""
-    let publicKey: String = "MFkwEwYHKoZIzj0CAQYIKoZIzj0DAQcDQgAEg852ykK06NGb/LwK3SEJoDH+QUXXxddlZ66raHOwqm1XR5fjjTo+LAc7qBobFcMtJqFcSWLxWmqcK96hxM+1ZQ=="
     @IBOutlet weak var tableView: UITableView!
     @IBOutlet weak var verifyButton: UIButton!
     
@@ -17,15 +16,19 @@ class CouponDetailsViewController: UIViewController, UITableViewDelegate, UITabl
         
         self.view.addSubview(activityView)
         
-        networkCall({
+        networkCall({success in
             DispatchQueue.main.async {
                 activityView.stopAnimating()
-                self.view.makeToast("Coupon Verified")
+                if success {
+                    self.view.makeToast("Coupon Verified")
+                } else {
+                    self.view.makeToast("Coupon Not Verified")
+                }
             }
         })
     }
     
-    func networkCall(_ completion: @escaping () -> Void) {
+    func networkCall(_ completion: @escaping (Bool) -> Void) {
         let urlString = "http://ec2-13-127-161-80.ap-south-1.compute.amazonaws.com:8080/verifyApi"
         var TxnSign = ""
         for var i in 0..<coupon.data.count{
@@ -36,13 +39,15 @@ class CouponDetailsViewController: UIViewController, UITableViewDelegate, UITabl
         Alamofire.request(urlString, method: .post, parameters:
             ["sign": self.coupon.key,
              "data": payLoad,
-             "pubKey": self.coupon.publicKey
+             "publicKey": self.coupon.publicKey
             ], encoding: URLEncoding(destination: .queryString)).response {
             response in
                 if response.response?.statusCode == 200 {
                     let responseString = String(data: response.data!, encoding: .utf8)
                     print("responseString = \(String(describing: responseString))")
-                    completion()
+                    completion(true)
+                } else {
+                    completion(false)
                 }
         }
     }

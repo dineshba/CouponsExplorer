@@ -18,7 +18,7 @@ class DetailsViewController: UIViewController{
         super.viewDidLoad()
         view.backgroundColor = .white
         print(scannedCode!)
-        let url = URL(string: "http://ec2-13-127-161-80.ap-south-1.compute.amazonaws.com:8080/redeemApi")!
+        let url = URL(string: "http://ec2-13-127-161-80.ap-south-1.compute.amazonaws.com:8080/redeem")!
         var request = URLRequest(url: url)
         request.setValue("application/x-www-form-urlencoded", forHTTPHeaderField: "Content-Type")
         request.httpMethod = "POST"
@@ -78,11 +78,11 @@ class DetailsViewController: UIViewController{
         //        }
         if success == 0
         {
-            codeLabel.text = scannedCode! + "redeemed at POS terminal at P&G"
+            codeLabel.text = "Redeemption request has been submitted"
         }
         else if success == 1
         {
-            codeLabel.text = self.doubleSpendMessage
+            codeLabel.text = "Double spend attempt stopped"
         }
         else if success == 2{
             codeLabel.text = self.invalidMessage
